@@ -1,0 +1,90 @@
+[
+  {
+    "keywords": ["apa itu matriks", "pengertian matriks", "definisi matriks", "apa matriks"],
+    "answer": "<strong>Matriks</strong> adalah susunan bilangan-bilangan yang disusun dalam baris dan kolom berbentuk persegi panjang, diapit oleh tanda kurung siku [ ] atau tanda kurung biasa ( ). Bilangan-bilangan tersebut disebut <em>elemen</em> atau <em>entri</em> matriks. Matriks biasa dilambangkan dengan huruf kapital seperti A, B, C."
+  },
+  {
+    "keywords": ["ordo", "ukuran matriks", "ordo matriks", "baris kolom"],
+    "answer": "<strong>Ordo matriks</strong> menyatakan ukuran matriks, yaitu banyak baris × banyak kolom (m × n). Contoh: matriks 2×3 artinya memiliki 2 baris dan 3 kolom. Elemen matriks dinyatakan sebagai a<sub>ij</sub>, dimana i = nomor baris dan j = nomor kolom."
+  },
+  {
+    "keywords": ["jenis", "macam", "tipe matriks", "jenis-jenis"],
+    "answer": "Jenis-jenis matriks meliputi: <ul><li><strong>Matriks Baris</strong> — hanya punya 1 baris (ordo 1×n)</li><li><strong>Matriks Kolom</strong> — hanya punya 1 kolom (ordo m×1)</li><li><strong>Matriks Persegi</strong> — jumlah baris = kolom (n×n)</li><li><strong>Matriks Nol</strong> — semua elemen bernilai 0</li><li><strong>Matriks Identitas</strong> — diagonal utama = 1, lainnya = 0</li><li><strong>Matriks Segitiga</strong> — elemen di bawah/atas diagonal = 0</li><li><strong>Matriks Diagonal</strong> — hanya elemen diagonal yang tidak nol</li></ul>"
+  },
+  {
+    "keywords": ["penjumlahan", "tambah", "jumlah", "menjumlahkan"],
+    "answer": "Dua matriks dapat <strong>dijumlahkan</strong> jika memiliki <em>ordo yang sama</em>. Penjumlahan dilakukan elemen per elemen yang seletak. Contoh: jika A = [[1,2],[3,4]] dan B = [[5,6],[7,8]], maka A + B = [[6,8],[10,12]]."
+  },
+  {
+    "keywords": ["pengurangan", "kurang", "mengurangkan", "selisih"],
+    "answer": "<strong>Pengurangan matriks</strong> dilakukan elemen per elemen pada matriks yang berordo sama, sama seperti penjumlahan. Contoh: A - B, setiap elemen A dikurangi elemen B yang seletak."
+  },
+  {
+    "keywords": ["perkalian skalar", "kali skalar", "skalar"],
+    "answer": "<strong>Perkalian skalar</strong> adalah mengalikan setiap elemen matriks dengan suatu bilangan (skalar). Contoh: 2 × [[1,3],[2,4]] = [[2,6],[4,8]]. Setiap elemen dikalikan dengan 2."
+  },
+  {
+    "keywords": ["perkalian matriks", "kali matriks", "mengalikan matriks", "perkalian dua matriks"],
+    "answer": "<strong>Perkalian matriks</strong> A(m×n) dengan B(n×p) menghasilkan C(m×p). <em>Syarat:</em> jumlah kolom A harus sama dengan jumlah baris B. Caranya: c<sub>ij</sub> = Σ(a<sub>ik</sub> × b<sub>kj</sub>). Perkalian matriks bersifat <strong>tidak komutatif</strong> (A×B ≠ B×A pada umumnya)."
+  },
+  {
+    "keywords": ["determinan", "det", "nilai determinan"],
+    "answer": "<strong>Determinan</strong> hanya berlaku untuk matriks persegi. Untuk matriks 2×2: det(A) = ad − bc. Untuk 3×3 bisa menggunakan <em>aturan Sarrus</em> atau ekspansi kofaktor. Determinan berguna untuk menentukan apakah matriks memiliki invers."
+  },
+  {
+    "keywords": ["invers", "balikan", "kebalikan", "a invers"],
+    "answer": "<strong>Invers matriks</strong> A ditulis A⁻¹. Syarat: det(A) ≠ 0. Untuk matriks 2×2: A⁻¹ = (1/det(A)) × [[d, −b],[−c, a]]. Sifat penting: A × A⁻¹ = A⁻¹ × A = I (matriks identitas)."
+  },
+  {
+    "keywords": ["transpose", "transpos"],
+    "answer": "<strong>Transpose matriks A</strong> (ditulis Aᵀ) diperoleh dengan menukar baris menjadi kolom dan sebaliknya. Contoh: jika A = [[1,2,3],[4,5,6]], maka Aᵀ = [[1,4],[2,5],[3,6]]. Ordo berubah dari m×n menjadi n×m."
+  },
+  {
+    "keywords": ["identitas", "matriks identitas", "matriks satuan"],
+    "answer": "<strong>Matriks Identitas (I)</strong> adalah matriks persegi dengan elemen diagonal utama = 1 dan elemen lainnya = 0. Sifat: A × I = I × A = A. Matriks identitas berperan seperti angka 1 dalam perkalian biasa."
+  },
+  {
+    "keywords": ["matriks nol", "elemen nol", "semua nol"],
+    "answer": "<strong>Matriks Nol (O)</strong> adalah matriks yang semua elemennya = 0. Sifat: A + O = A dan A × O = O. Matriks nol berperan seperti angka 0 dalam penjumlahan."
+  },
+  {
+    "keywords": ["komutatif", "sifat perkalian", "ab ba", "tidak komutatif"],
+    "answer": "Perkalian matriks bersifat <strong>tidak komutatif</strong>, artinya A × B belum tentu sama dengan B × A. Namun, perkalian matriks bersifat <strong>asosiatif</strong>: (AB)C = A(BC) dan <strong>distributif</strong>: A(B+C) = AB + AC."
+  },
+  {
+    "keywords": ["syarat kali", "syarat perkalian", "kapan bisa dikali", "syarat mengalikan"],
+    "answer": "Dua matriks A dan B dapat dikalikan (A × B) <strong>jika jumlah kolom A sama dengan jumlah baris B</strong>. Jika A berordo m×n and B berordo n×p, maka hasil perkalian berordo m×p."
+  },
+  {
+    "keywords": ["syarat jumlah", "syarat penjumlahan", "kapan bisa dijumlah", "syarat tambah"],
+    "answer": "Dua matriks dapat dijumlahkan atau dikurangkan <strong>jika dan hanya jika keduanya memiliki ordo yang sama</strong> (jumlah baris dan kolom yang sama)."
+  },
+  {
+    "keywords": ["singular", "non singular", "tidak punya invers"],
+    "answer": "Matriks <strong>singular</strong> adalah matriks yang det(A) = 0, sehingga tidak memiliki invers. Matriks <strong>non-singular</strong> adalah matriks yang det(A) ≠ 0, sehingga memiliki invers."
+  },
+  {
+    "keywords": ["simetris", "matriks simetris"],
+    "answer": "Matriks <strong>simetris</strong> adalah matriks persegi yang memenuhi A = Aᵀ (transpose-nya sama dengan dirinya sendiri). Artinya elemen a<sub>ij</sub> = a<sub>ji</sub> untuk semua i dan j."
+  },
+  {
+    "keywords": ["aplikasi", "kegunaan", "manfaat", "kehidupan nyata", "penggunaan"],
+    "answer": "Matriks memiliki banyak aplikasi: <ul><li><strong>Grafis komputer</strong> — transformasi gambar 2D/3D (rotasi, translasi, skala)</li><li><strong>Ekonomi</strong> — model input-output Leontief</li><li><strong>Kriptografi</strong> — enkripsi dan dekripsi pesan (Hill Cipher)</li><li><strong>Fisika</strong> — mekanika kuantum, transformasi koordinat</li><li><strong>Machine Learning</strong> — representasi data, neural network</li><li><strong>Teknik</strong> — analisis rangkaian listrik, struktur bangunan</li></ul>"
+  },
+  {
+    "keywords": ["elemen", "entri", "komponen", "anggota matriks"],
+    "answer": "<strong>Elemen matriks</strong> adalah bilangan-bilangan yang menyusun matriks. Elemen pada baris ke-i dan kolom ke-j ditulis sebagai a<sub>ij</sub>. Contoh: pada matriks A = [[1,2],[3,4]], elemen a<sub>21</sub> = 3 (baris 2, kolom 1)."
+  },
+  {
+    "keywords": ["sarrus", "aturan sarrus", "determinan 3x3"],
+    "answer": "<strong>Aturan Sarrus</strong> digunakan untuk menghitung determinan matriks 3×3. Caranya: salin kolom 1 dan 2 di sebelah kanan matriks. Kalikan diagonal dari kiri atas ke kanan bawah (positif) dan diagonal dari kanan atas ke kiri bawah (negatif), lalu jumlahkan semua hasilnya."
+  },
+  {
+    "keywords": ["cara menghitung", "langkah", "rumus", "menghitung"],
+    "answer": "Untuk <strong>menghitung matriks</strong>, tergantung operasinya: <ul><li><strong>Penjumlahan/Pengurangan</strong>: elemen per elemen (ordo harus sama)</li><li><strong>Perkalian skalar</strong>: kalikan setiap elemen dengan skalar</li><li><strong>Perkalian matriks</strong>: jumlahkan hasil kali baris × kolom</li><li><strong>Determinan 2×2</strong>: ad − bc</li><li><strong>Invers 2×2</strong>: (1/det) × [[d,−b],[−c,a]]</li></ul>"
+  },
+  {
+    "keywords": ["sama", "matriks sama", "kesamaan matriks"],
+    "answer": "Dua matriks dikatakan <strong>sama</strong> jika: (1) memiliki <em>ordo yang sama</em>, dan (2) setiap elemen yang <em>seletak bernilai sama</em>. Contoh: [[1,2],[3,4]] = [[1,2],[3,4]] karena ordo dan semua elemen seletak bernilai sama."
+  }
+]

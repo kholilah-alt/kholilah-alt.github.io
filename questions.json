@@ -1,0 +1,182 @@
+{
+  "allQuestions": [
+    {
+      "q": "Matriks A berordo 3×2. Artinya matriks A memiliki....",
+      "options": ["3 kolom dan 2 baris", "3 baris dan 2 kolom", "6 baris", "2 baris dan 3 kolom"],
+      "answer": 1,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Ordo matriks dituliskan dalam format standar universal: <code>m × n</code>.<br/>• <strong>m</strong> mewakili jumlah <strong>baris</strong> (susunan elemen arah horizontal/mendatar).<br/>• <strong>n</strong> mewakili jumlah <strong>kolom</strong> (susunan elemen arah vertikal tegak lurus dari atas ke bawah).<br/>Jika matriks A berordo <code>3 × 2</code>, angka pertama (3) menunjukkan jumlah baris, dan angka kedua (2) menunjukkan jumlah kolom. Oleh karena itu, matriks tersebut memiliki <strong>3 baris dan 2 kolom</strong>. Pilihan lain salah karena menukar posisi baris dengan kolom."
+    },
+    {
+      "q": "Jika A = [[2,1],[3,4]] dan B = [[1,2],[0,1]], maka A + B = ....",
+      "options": ["[[3,3],[3,5]]", "[[3,2],[3,5]]", "[[2,3],[3,5]]", "[[3,3],[3,4]]"],
+      "answer": 0,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Operasi penjumlahan dua matriks hanya diperbolehkan jika kedua matriks memiliki ordo yang sama (dalam kasus ini keduanya berordo 2×2). Penjumlahan dilakukan dengan menjumlahkan elemen-elemen yang berada di posisi yang <strong>seletak (sebaris dan sekolom)</strong>.<br/><br/>Mari kita hitung satu per satu posisi elemen hasil penjumlahan:<br/>• <strong>Elemen Baris 1, Kolom 1 (Kiri Atas):</strong><br/>  A<sub>11</sub> + B<sub>11</sub> = <code>2 + 1 = 3</code><br/>• <strong>Elemen Baris 1, Kolom 2 (Kanan Atas):</strong><br/>  A<sub>12</sub> + B<sub>12</sub> = <code>1 + 2 = 3</code><br/>• <strong>Elemen Baris 2, Kolom 1 (Kiri Bawah):</strong><br/>  A<sub>21</sub> + B<sub>21</sub> = <code>3 + 0 = 3</code><br/>• <strong>Elemen Baris 2, Kolom 2 (Kanan Bawah):</strong><br/>  A<sub>22</sub> + B<sub>22</sub> = <code>4 + 1 = 5</code><br/><br/>Dengan menggabungkan semua elemen seletak tersebut, kita peroleh matriks baru:<br/><code>[[3, 3], [3, 5]]</code>. Oleh karena itu, pilihan pertama adalah jawaban yang benar."
+    },
+    {
+      "q": "Determinan matriks [[4,2],[3,1]] adalah....",
+      "options": ["4", "-2", "2", "10"],
+      "answer": 1,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Untuk matriks persegi berordo 2×2 dengan bentuk umum <code>A = [[a, b], [c, d]]</code>, nilai determinan (dilambangkan dengan det(A) atau |A|) dihitung menggunakan rumus silang:<br/><code>det(A) = ad − bc</code> (Diagonal Utama dikurangi Diagonal Samping).<br/><br/>Mari kita petakan elemen-elemen dari matriks <code>[[4, 2], [3, 1]]</code>:<br/>• a = 4 (diagonal utama kiri atas)<br/>• b = 2 (diagonal samping kanan atas)<br/>• c = 3 (diagonal samping kiri bawah)<br/>• d = 1 (diagonal utama kanan bawah)<br/><br/>Sekarang masukkan nilai-nilai ini ke dalam rumus:<br/>det(A) = (4 × 1) − (2 × 3)<br/>det(A) = 4 − 6<br/>det(A) = <strong>-2</strong>.<br/>Sehingga nilai determinannya adalah <strong>-2</strong>."
+    },
+    {
+      "q": "Matriks yang semua elemennya bernilai nol disebut....",
+      "options": ["Matriks Identitas", "Matriks Diagonal", "Matriks Nol", "Matriks Transpose"],
+      "answer": 2,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Di dalam teori aljabar matriks, penggolongan jenis matriks didasarkan pada karakteristik elemen penyusunnya:<br/>• <strong>Matriks Nol (O):</strong> Sebuah matriks di mana setiap elemen di seluruh baris dan kolom bernilai 0 (contoh: <code>[[0,0],[0,0]]</code>). Ini adalah jawaban yang benar.<br/>• <strong>Matriks Identitas:</strong> Matriks persegi dengan elemen diagonal utama bernilai 1 dan elemen lainnya bernilai 0.<br/>• <strong>Matriks Diagonal:</strong> Matriks persegi yang elemen di luar diagonal utamanya bernilai 0, namun elemen diagonal utamanya tidak harus bernilai 1.<br/>• <strong>Matriks Transpose:</strong> Bukan jenis matriks khusus, melainkan hasil operasi penukaran baris menjadi kolom dari matriks asal."
+    },
+    {
+      "q": "Matriks identitas orde 2×2 adalah....",
+      "options": ["[[0,0],[0,0]]", "[[1,1],[1,1]]", "[[1,0],[0,1]]", "[[0,1],[1,0]]"],
+      "answer": 2,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Matriks Identitas (dilambangkan dengan <code>I</code>) memiliki sifat khusus yang mirip dengan angka 1 dalam perkalian bilangan biasa. Aturan pembentukan Matriks Identitas adalah:<br/>1. Harus berupa matriks persegi (jumlah baris = jumlah kolom).<br/>2. Elemen pada diagonal utama (dari kiri atas ke kanan bawah) harus bernilai <strong>1</strong>.<br/>3. Semua elemen di luar diagonal utama harus bernilai <strong>0</strong>.<br/><br/>Mari kita cek pilihan yang tersedia:<br/>• <code>[[1, 0], [0, 1]]</code>: Diagonal utama berisi 1, elemen lain berisi 0. Ini memenuhi syarat ordo 2×2 (benar).<br/>• <code>[[1, 1], [1, 1]]</code>: Salah, karena elemen diagonal samping juga bernilai 1.<br/>• <code>[[0, 0], [0, 0]]</code>: Salah, ini adalah matriks nol."
+    },
+    {
+      "q": "Jika A = [[3,0],[0,5]], maka Aᵀ (transpose A) adalah....",
+      "options": ["[[0,3],[5,0]]", "[[3,0],[0,5]]", "[[5,0],[0,3]]", "[[0,5],[3,0]]"],
+      "answer": 1,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Operasi Transpose (dilambangkan dengan pangkat T, <code>Aᵀ</code>) adalah operasi mengubah elemen <strong>baris menjadi kolom</strong> (atau sebaliknya).<br/><br/>Mari kita lakukan operasi transpose pada matriks <code>A = [[3, 0], [0, 5]]</code>:<br/>• Baris pertama dari A adalah <code>[3, 0]</code>. Baris ini kita ubah menjadi kolom pertama dari Aᵀ, yaitu ditulis secara tegak lurus: <code>[3, 0]ᵀ</code>.<br/>• Baris kedua dari A adalah <code>[0, 5]</code>. Baris ini kita ubah menjadi kolom kedua dari Aᵀ, ditulis tegak lurus: <code>[0, 5]ᵀ</code>.<br/><br/>Jika disusun kembali, matriks hasil transpose adalah <code>[[3, 0], [0, 5]]</code>.<br/>Perlu dicatat bahwa matriks A adalah <strong>matriks diagonal/simetris</strong>, di mana elemen di atas diagonal sama dengan elemen di bawah diagonal (yaitu bernilai 0). Untuk semua matriks simetris, berlaku sifat khusus: <code>A = Aᵀ</code>."
+    },
+    {
+      "q": "Perkalian matriks AB tidak selalu sama dengan BA. Sifat ini disebut....",
+      "options": ["Asosiatif", "Tidak Komutatif", "Distributif", "Refleksif"],
+      "answer": 1,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Di dalam matematika, apabila urutan operasi dibalik namun menghasilkan nilai yang sama (seperti perkalian angka biasa <code>2 × 3 = 3 × 2</code>), operasi tersebut dikatakan memiliki sifat <strong>Komutatif</strong>.<br/><br/>Namun, pada perkalian matriks, operasi perkalian didasarkan pada metode baris dikali kolom. Mengubah posisi pengali (dari AB menjadi BA) hampir selalu menghasilkan nilai yang berbeda, bahkan sering kali ordo hasilnya pun berbeda atau tidak dapat dikalikan sama sekali. Sifat ini disebut sebagai sifat <strong>Tidak Komutatif</strong> (atau non-komutatif)."
+    },
+    {
+      "q": "Syarat dua matriks dapat dikalikan adalah....",
+      "options": [
+        "Jumlah baris A = jumlah baris B",
+        "Jumlah kolom A = jumlah kolom B",
+        "Jumlah kolom A = jumlah baris B",
+        "Kedua matriks harus persegi"
+      ],
+      "answer": 2,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Operasi perkalian dua matriks (A × B) didefinisikan menggunakan metode pengalian elemen-elemen baris matriks pertama dengan elemen-elemen kolom matriks kedua secara berpasangan.<br/><br/>Agar setiap elemen mendapatkan pasangannya dengan tepat, maka <strong>jumlah kolom matriks pertama (A) wajib sama dengan jumlah baris matriks kedua (B)</strong>.<br/><br/>Sebagai ilustrasi:<br/>• Jika matriks A berordo <code>m × n</code> dan matriks B berordo <code>n × p</code>.<br/>• Nilai tengahnya (yaitu <code>n</code>, kolom A dan baris B) harus sama.<br/>• Hasil perkalian matriks C akan memiliki ordo dari nilai luar, yaitu <code>m × p</code>.<br/>Jika syarat ini tidak terpenuhi, maka perkalian tidak dapat didefinisikan."
+    },
+    {
+      "q": "Invers matriks A ada jika dan hanya jika....",
+      "options": ["det(A) = 0", "det(A) ≠ 0", "A adalah matriks baris", "A adalah matriks kolom"],
+      "answer": 1,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Rumus untuk mencari invers dari suatu matriks A adalah:<br/><code>A⁻¹ = 1/det(A) × Adjoin(A)</code>.<br/><br/>Di dalam matematika, pembagian dengan angka nol tidak didefinisikan (menghasilkan nilai tidak terhingga/error). Oleh karena itu, kita tidak dapat menghitung nilai <code>1/det(A)</code> apabila determinan dari matriks A bernilai nol.<br/><br/>• Jika <strong>det(A) = 0</strong>: Matriks disebut matriks <strong>Singular</strong> dan tidak memiliki invers.<br/>• Jika <strong>det(A) ≠ 0</strong>: Matriks disebut matriks <strong>Non-Singular</strong> dan dipastikan memiliki invers.<br/>Oleh karena itu, invers matriks A ada jika dan hanya jika <strong>det(A) ≠ 0</strong>."
+    },
+    {
+      "q": "Jika det(A) = 5, maka det(2A) untuk matriks 2×2 adalah....",
+      "options": ["5", "10", "20", "25"],
+      "answer": 2,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Salah satu sifat penting determinan matriks saat dikalikan dengan skalar (bilangan real) adalah:<br/><code>det(k · A) = kⁿ · det(A)</code>, di mana <strong>k</strong> adalah bilangan skalar pengali dan <strong>n</strong> melambangkan ordo (dimensi) dari matriks persegi tersebut.<br/><br/>Mari kita masukkan angka dari soal ke dalam sifat di atas:<br/>• Konstanta skalar (k) = 2<br/>• Matriks persegi berordo 2×2, maka n = 2<br/>• Nilai determinan awal det(A) = 5<br/><br/>Sekarang kita hitung:<br/>det(2A) = 2² × det(A)<br/>det(2A) = 4 × 5<br/>det(2A) = <strong>20</strong>.<br/>Pilihan 10 salah karena hanya mengalikan langsung 2 × 5 tanpa memangkatkan dengan ordo matriks."
+    },
+    {
+      "q": "Matriks persegi dengan elemen diagonal utama = 1 dan elemen lainnya = 0 disebut....",
+      "options": ["Matriks Nol", "Matriks Simetris", "Matriks Identitas", "Matriks Diagonal"],
+      "answer": 2,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Mari kita bedakan definisi formal masing-masing istilah agar tidak tertukar:<br/>• <strong>Matriks Identitas (I):</strong> Matriks persegi khusus di mana semua elemen diagonal utama bernilai 1, dan seluruh elemen di luar diagonal utama bernilai 0 (contoh: <code>[[1,0],[0,1]]</code>). Ini adalah jawaban yang benar.<br/>• <strong>Matriks Diagonal:</strong> Matriks persegi yang elemen di luar diagonal utamanya bernilai 0, namun elemen diagonal utamanya tidak dibatasi (bisa angka berapa saja selain 1).<br/>• <strong>Matriks Nol:</strong> Matriks yang semua elemennya bernilai 0.<br/>• <strong>Matriks Simetris:</strong> Matriks persegi yang elemennya simetris terhadap diagonal utama (A = Aᵀ)."
+    },
+    {
+      "q": "Jika A = [[1,2],[3,4]], elemen a₂₁ adalah....",
+      "options": ["1", "2", "3", "4"],
+      "answer": 2,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Setiap elemen di dalam matriks diidentifikasi menggunakan indeks baris dan kolom yang ditulis dalam format subskrip <strong>a<sub>ij</sub></strong>:<br/>• <strong>i</strong> menunjukkan urutan <strong>baris</strong> (dihitung dari atas ke bawah).<br/>• <strong>j</strong> menunjukkan urutan <strong>kolom</strong> (dihitung dari kiri ke kanan).<br/><br/>Kita ingin mencari elemen <strong>a<sub>21</sub></strong>, yang berarti elemen pada <strong>Baris ke-2</strong> dan <strong>Kolom ke-1</strong>.<br/><br/>Mari kita bedah matriks <code>A = [[1, 2], [3, 4]]</code>:<br/>• Baris 1 berisi elemen 1 dan 2.<br/>• Baris 2 berisi elemen 3 dan 4.<br/>Dari Baris ke-2 ini, kita ambil Kolom ke-1 (elemen pertama di baris tersebut), yaitu angka <strong>3</strong>.<br/>Sebagai pelengkap: a₁₁ = 1, a₁₂ = 2, a₂₁ = 3, dan a₂₂ = 4."
+    },
+    {
+      "q": "Hasil dari 2 × [[1,3],[2,4]] adalah....",
+      "options": ["[[1,3],[2,4]]", "[[2,6],[4,8]]", "[[3,5],[4,6]]", "[[2,3],[4,4]]"],
+      "answer": 1,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Operasi perkalian matriks dengan bilangan skalar (angka real biasa) dilakukan dengan cara mengalikan bilangan pengali tersebut ke <strong>setiap elemen tunggal</strong> yang ada di dalam matriks secara merata.<br/><br/>Mari kita kalikan angka skalar 2 ke masing-masing elemen matriks <code>[[1, 3], [2, 4]]</code>:<br/>• Elemen Baris 1, Kolom 1: <code>2 × 1 = 2</code><br/>• Elemen Baris 1, Kolom 2: <code>2 × 3 = 6</code><br/>• Elemen Baris 2, Kolom 1: <code>2 × 2 = 4</code><br/>• Elemen Baris 2, Kolom 2: <code>2 × 4 = 8</code><br/><br/>Jika kita susun kembali elemen-elemen hasil perkalian ini ke dalam matriks baru, kita dapatkan <strong>[[2, 6], [4, 8]]</strong>. Ini adalah jawaban yang benar."
+    },
+    {
+      "q": "Suatu matriks A dikatakan simetris jika....",
+      "options": ["A = –A", "A = Aᵀ", "det(A) = 1", "A × A = I"],
+      "answer": 1,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Matriks Simetris adalah matriks persegi khusus yang elemen-elemennya tersusun secara simetris (cerminan) terhadap garis diagonal utama.<br/><br/>Secara matematis, sifat simetris ini didefinisikan secara formal dengan aturan: **Apabila matriks tersebut di-transpose (baris ditukar menjadi kolom), maka hasilnya akan menghasilkan matriks yang sama persis dengan matriks semula**.<br/><br/>Notasi rumusnya adalah <strong>A = Aᵀ</strong>.<br/>Contoh matriks simetris: <code>[[1, 2], [2, 5]]</code>. Jika baris 1 [1, 2] dijadikan kolom 1, dan baris 2 [2, 5] dijadikan kolom 2, hasil transposenya tetap <code>[[1, 2], [2, 5]]</code>."
+    },
+    {
+      "q": "Jika A = [[2,1],[5,3]], maka det(A) = ....",
+      "options": ["1", "6", "11", "–1"],
+      "answer": 0,
+      "pembahasan": "<strong>Penjelasan Sangat Rinci:</strong><br/>Untuk menghitung determinan matriks persegi berordo 2×2 dengan elemen <code>[[a, b], [c, d]]</code>, kita gunakan rumus silang diagonal:<br/><code>det(A) = ad − bc</code>.<br/><br/>Mari kita petakan elemen dari matriks <code>A = [[2, 1], [5, 3]]</code>:<br/>• a = 2<br/>• b = 1<br/>• c = 5<br/>• d = 3<br/><br/>Sekarang kita hitung nilai determinannya:<br/>det(A) = (2 × 3) − (1 × 5)<br/>det(A) = 6 − 5<br/>det(A) = <strong>1</strong>.<br/>Karena 6 dikurangi 5 menghasilkan 1, maka determinan matriks tersebut adalah <strong>1</strong>."
+    }
+  ],
+  "examQuestions": [
+    {
+      "q": "Matriks A berordo 3×2. Artinya matriks A memiliki....",
+      "options": ["3 kolom dan 2 baris", "3 baris dan 2 kolom", "6 baris", "2 baris dan 3 kolom", "5 elemen"],
+      "answer": 1
+    },
+    {
+      "q": "Jika A = [[2,1],[3,4]] dan B = [[1,2],[0,1]], maka A + B = ....",
+      "options": ["[[3,3],[3,5]]", "[[3,2],[3,5]]", "[[2,3],[3,5]]", "[[3,3],[3,4]]", "[[2,1],[3,4]]"],
+      "answer": 0
+    },
+    {
+      "q": "Determinan matriks [[4,2],[3,1]] adalah....",
+      "options": ["4", "-2", "2", "10", "-4"],
+      "answer": 1
+    },
+    {
+      "q": "Matriks yang semua elemennya bernilai nol disebut....",
+      "options": ["Matriks Identitas", "Matriks Diagonal", "Matriks Nol", "Matriks Transpose", "Matriks Simetris"],
+      "answer": 2
+    },
+    {
+      "q": "Matriks identitas orde 2×2 adalah....",
+      "options": ["[[0,0],[0,0]]", "[[1,1],[1,1]]", "[[1,0],[0,1]]", "[[0,1],[1,0]]", "[[2,0],[0,2]]"],
+      "answer": 2
+    },
+    {
+      "q": "Jika A = [[3,0],[0,5]], maka Aᵀ (transpose A) adalah....",
+      "options": ["[[0,3],[5,0]]", "[[3,0],[0,5]]", "[[5,0],[0,3]]", "[[0,5],[3,0]]", "[[3,5],[0,0]]"],
+      "answer": 1
+    },
+    {
+      "q": "Perkalian matriks AB tidak selalu sama dengan BA. Sifat ini disebut....",
+      "options": ["Asosiatif", "Tidak Komutatif", "Distributif", "Refleksif", "Transitif"],
+      "answer": 1
+    },
+    {
+      "q": "Syarat dua matriks dapat dikalikan adalah....",
+      "options": [
+        "Jumlah baris A = jumlah baris B",
+        "Jumlah kolom A = jumlah kolom B",
+        "Jumlah kolom A = jumlah baris B",
+        "Kedua matriks harus persegi",
+        "Kedua matriks harus berordo sama"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Invers matriks A ada jika dan hanya jika....",
+      "options": ["det(A) = 0", "det(A) ≠ 0", "A adalah matriks baris", "A adalah matriks kolom", "A berordo 3×3"],
+      "answer": 1
+    },
+    {
+      "q": "Jika det(A) = 5, maka det(2A) untuk matriks 2×2 adalah....",
+      "options": ["5", "10", "20", "25", "40"],
+      "answer": 2
+    },
+    {
+      "q": "Matriks persegi dengan elemen diagonal utama = 1 dan elemen lainnya = 0 disebut....",
+      "options": ["Matriks Nol", "Matriks Simetris", "Matriks Identitas", "Matriks Diagonal", "Matriks Segitiga"],
+      "answer": 2
+    },
+    {
+      "q": "Jika A = [[1,2],[3,4]], elemen a₂₁ adalah....",
+      "options": ["1", "2", "3", "4", "0"],
+      "answer": 2
+    },
+    {
+      "q": "Hasil dari 2 × [[1,3],[2,4]] adalah....",
+      "options": ["[[1,3],[2,4]]", "[[2,6],[4,8]]", "[[3,5],[4,6]]", "[[2,3],[4,4]]", "[[4,6],[2,8]]"],
+      "answer": 1
+    },
+    {
+      "q": "Suatu matriks A dikatakan simetris jika....",
+      "options": ["A = –A", "A = Aᵀ", "det(A) = 1", "A × A = I", "A = A⁻¹"],
+      "answer": 1
+    },
+    {
+      "q": "Jika A = [[2,1],[5,3]], maka det(A) = ....",
+      "options": ["1", "6", "11", "–1", "0"],
+      "answer": 0
+    }
+  ]
+}

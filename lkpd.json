@@ -1,0 +1,117 @@
+[
+  {
+    "id": "lk1",
+    "title": "LKPD 1: Pengertian & Ordo Matriks",
+    "instructions": "Perhatikan matriks berikut, lalu jawab pertanyaan di bawah ini.",
+    "type": "concept",
+    "matrix": [[3, -1, 5], [0, 4, 2]],
+    "questions": [
+      { "q": "Berapa jumlah baris matriks di atas?", "answer": "2" },
+      { "q": "Berapa jumlah kolom matriks di atas?", "answer": "3" },
+      { "q": "Tuliskan ordo matriks di atas (format: mxn):", "answer": "2x3" },
+      { "q": "Berapa nilai elemen a12 (baris 1, kolom 2)?", "answer": "-1" },
+      { "q": "Berapa nilai elemen a23 (baris 2, kolom 3)?", "answer": "2" }
+    ]
+  },
+  {
+    "id": "lk2",
+    "title": "LKPD 2: Penjumlahan Matriks 2x2",
+    "instructions": "Hitung hasil A + B dengan mengisi kotak hasil di sebelah kanan.",
+    "type": "matrix_addition",
+    "matrixA": [[3, 5], [1, 2]],
+    "matrixB": [[2, -1], [4, 0]],
+    "correctAnswer": [[5, 4], [5, 2]]
+  },
+  {
+    "id": "lk3",
+    "title": "LKPD 3: Determinan Matriks 2x2",
+    "instructions": "Diberikan matriks C. Ikuti langkah berikut untuk menghitung det(C).",
+    "type": "concept",
+    "matrix": [[6, 2], [3, 2]],
+    "questions": [
+      { "q": "Berapa nilai a x d (diagonal utama: 6 x 2)?", "answer": "12" },
+      { "q": "Berapa nilai b x c (diagonal samping: 2 x 3)?", "answer": "6" },
+      { "q": "det(C) = a x d - b x c = 12 - 6 = ?", "answer": "6" }
+    ]
+  },
+  {
+    "id": "lk4",
+    "title": "LKPD 4: Pengurangan Matriks 2x2",
+    "instructions": "Hitung hasil A - B dengan mengisi kotak hasil.",
+    "type": "matrix_addition",
+    "matrixA": [[7, 3], [5, 9]],
+    "matrixB": [[2, 1], [3, 4]],
+    "correctAnswer": [[5, 2], [2, 5]]
+  },
+  {
+    "id": "lk5",
+    "title": "LKPD 5: Jenis-Jenis Matriks",
+    "instructions": "Jawab pertanyaan tentang jenis-jenis matriks berikut.",
+    "type": "concept",
+    "matrix": [[1, 0], [0, 1]],
+    "questions": [
+      { "q": "Matriks di atas disebut matriks apa?", "answer": "identitas" },
+      { "q": "Berapa elemen pada diagonal utama?", "answer": "1" },
+      { "q": "Apakah matriks di atas berbentuk persegi? (ya/tidak)", "answer": "ya" },
+      { "q": "Berapa ordo matriks di atas (format: mxn)?", "answer": "2x2" }
+    ]
+  },
+  {
+    "id": "lk6",
+    "title": "LKPD 6: Perkalian Skalar",
+    "instructions": "Diberikan matriks A dan skalar k=3. Hitung 3 x A dan isi hasilnya.",
+    "type": "matrix_addition",
+    "matrixA": [[2, 4], [1, 3]],
+    "matrixB": [[0, 0], [0, 0]],
+    "correctAnswer": [[6, 12], [3, 9]],
+    "customInstructions": "3 x Matriks A = ?  (abaikan kotak B, langsung isi hasil)"
+  },
+  {
+    "id": "lk7",
+    "title": "LKPD 7: Transpose Matriks",
+    "instructions": "Diberikan matriks P berikut. Jawab pertanyaan tentang transposenya.",
+    "type": "concept",
+    "matrix": [[1, 2, 3], [4, 5, 6]],
+    "questions": [
+      { "q": "Ordo matriks P sebelum di-transpose (format: mxn)?", "answer": "2x3" },
+      { "q": "Ordo matriks P^T setelah di-transpose (format: mxn)?", "answer": "3x2" },
+      { "q": "Berapa nilai elemen baris 1 kolom 2 pada P^T?", "answer": "4" },
+      { "q": "Berapa nilai elemen baris 3 kolom 1 pada P^T?", "answer": "3" }
+    ]
+  },
+  {
+    "id": "lk8",
+    "title": "LKPD 8: Penjumlahan Matriks 3x3",
+    "instructions": "Hitung hasil A + B untuk matriks 2x3 berikut.",
+    "type": "matrix_addition",
+    "matrixA": [[1, 2, 3], [4, 5, 6]],
+    "matrixB": [[7, 8, 9], [1, 2, 3]],
+    "correctAnswer": [[8, 10, 12], [5, 7, 9]]
+  },
+  {
+    "id": "lk9",
+    "title": "LKPD 9: Matriks Simetris",
+    "instructions": "Perhatikan matriks S berikut and jawab pertanyaan.",
+    "type": "concept",
+    "matrix": [[1, 2, 3], [2, 5, 4], [3, 4, 6]],
+    "questions": [
+      { "q": "Apakah S = S^T? (ya/tidak)", "answer": "ya" },
+      { "q": "Matriks yang memenuhi S = S^T disebut matriks apa?", "answer": "simetris" },
+      { "q": "Berapa nilai elemen a12?", "answer": "2" },
+      { "q": "Berapa nilai elemen a21? (seharusnya sama dengan a12)", "answer": "2" }
+    ]
+  },
+  {
+    "id": "lk10",
+    "title": "LKPD 10: Invers Matriks 2x2",
+    "instructions": "Diberikan matriks M. Ikuti langkah menghitung invers M^-1.",
+    "type": "concept",
+    "matrix": [[4, 3], [2, 2]],
+    "questions": [
+      { "q": "Hitung det(M) = (4x2) - (3x2) = ?", "answer": "2" },
+      { "q": "Karena det != 0, apakah M memiliki invers? (ya/tidak)", "answer": "ya" },
+      { "q": "Elemen a pada M^-1 = (1/det) x d = (1/2) x 2 = ?", "answer": "1" },
+      { "q": "Elemen b pada M^-1 = (1/det) x (-b) = (1/2) x (-3) = ?", "answer": "-1.5" }
+    ]
+  }
+]

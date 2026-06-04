@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" /> <!-- Menetapkan pengkodean karakter standar UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Mengatur agar website responsif di layar HP -->
+  <title>MatriksEdu - Media Pembelajaran Matematika UNRAM</title> <!-- Judul yang muncul di tab browser -->
+  <!-- Metadata: Memuat CSS eksternal dan Font Google -->
+  <link rel="stylesheet" href="style.css?v=2.0" /> <!-- Memanggil file style.css untuk desain tampilan -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Outfit:wght@400;700;900&family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap"
+    rel="stylesheet" /> <!-- Font Playfair, Source Sans, Outfit & Caveat -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Ikon FontAwesome -->
+</head>
+
+<body>
+
+  <!-- Login Page: Menggunakan id="loginPage" sebagai target utama JavaScript. Elemen 'shape' di dalamnya diatur posisinya secara absolut di CSS untuk dekorasi background. -->
+  <div id="loginPage" class="login-page">
+    <div class="login-bg-shapes">
+      <span class="shape s1"></span>
+      <span class="shape s2"></span>
+      <span class="shape s3"></span>
+    </div>
+    <div class="login-card">
+      <div class="login-logo">
+        <img src="Logo Universitas Mataram.png" alt="Logo UNRAM" class="unram-logo-login" />
+        <h1>MatriksEdu</h1>
+        <p>Media Pembelajaran Matematika SMP / SMA</p>
+        <span class="badge-unram">Universitas Mataram</span>
+      </div>
+      <div class="login-form">
+        <div class="form-group">
+          <label for="username"><i class="fa fa-user"></i> Username</label>
+          <input type="text" id="username" placeholder="Masukkan username" />
+        </div>
+        <div class="form-group">
+          <label for="password"><i class="fa fa-lock"></i> Password</label>
+          <input type="password" id="password" placeholder="Masukkan password" />
+        </div>
+        <p id="loginError" class="login-error"></p>
+        <button id="loginBtn" class="btn-login">Masuk <i class="fa fa-arrow-right"></i></button>
+        <p class="login-hint">Demo: username <strong>admin</strong> / password <strong>1234</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MAIN SITE ===== -->
+  <div id="mainSite" class="hidden">
+
+    <!-- Header Navigasi: Menggunakan dropdown bersarang (li.has-sub). Atribut 'onclick' pada setiap link adalah jembatan utama menuju fungsi showContent di JavaScript. -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="header-brand">
+          <img src="Logo Universitas Mataram.png" alt="Logo UNRAM" class="unram-logo-header" />
+          <div class="brand-text">
+            <span class="brand-title">MatriksEdu</span>
+            <span class="brand-sub">Universitas Mataram</span>
+          </div>
+        </div>
+
+        <!-- TOP NAVIGATION -->
+        <nav class="top-nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#" class="nav-link active" onclick="showSection('beranda')">Beranda</a>
+            </li>
+            <li class="nav-item has-sub">
+              <a href="#" class="nav-link">Profil <i class="fa fa-chevron-down"></i></a>
+              <ul class="sub-menu">
+                <li><a href="#" onclick="showSection('beranda')">Halaman Utama</a></li>
+                <li><a href="#" onclick="showSection('tentang')">Tentang Website</a></li>
+              </ul>
+            </li>
+            <li class="nav-item has-sub">
+              <a href="#" class="nav-link">Layanan <i class="fa fa-chevron-down"></i></a>
+              <ul class="sub-menu">
+                <li><a href="#" onclick="showContent('pengertian')">Materi Matriks</a></li>
+                <li><a href="#" onclick="showContent('video')">Media Pembelajaran</a></li>
+                <li><a href="#" onclick="showContent('soalAcak')">Evaluasi & Soal</a></li>
+                <li><a href="#" onclick="showContent('tanyaJawab')">Tanya Jawab</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" id="logoutBtn" class="nav-link nav-logout">
+                <i class="fa fa-sign-out-alt"></i> Keluar
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN LAYOUT -->
+    <main class="main-layout">
+
+      <!-- Sidebar: Menu navigasi samping untuk akses cepat ke materi-materi tertentu -->
+      <aside class="left-sidebar">
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading"><i class="fa fa-book-open"></i> Materi Utama</h3>
+          <ul class="sidebar-menu">
+            <li class="sidebar-item has-sub">
+              <span class="sidebar-parent"><i class="fa fa-matrix"></i> Pengertian Matriks</span>
+              <ul class="sidebar-sub">
+                <li><a href="#" onclick="showContent('pengertian')">Definisi Matriks</a></li>
+                <li><a href="#" onclick="showContent('notasi')">Notasi & Ordo</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item has-sub">
+              <span class="sidebar-parent"><i class="fa fa-layer-group"></i> Jenis Matriks</span>
+              <ul class="sidebar-sub">
+                <li><a href="#" onclick="showContent('jenisMatriks')">Matriks Khusus</a></li>
+                <li><a href="#" onclick="showContent('transpose')">Transpose</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item has-sub">
+              <span class="sidebar-parent"><i class="fa fa-calculator"></i> Operasi Matriks</span>
+              <ul class="sidebar-sub">
+                <li><a href="#" onclick="showContent('operasi')">Penjumlahan & Pengurangan</a></li>
+                <li><a href="#" onclick="showContent('perkalian')">Perkalian Matriks</a></li>
+              </ul>
+            </li>
+            <li class="sidebar-item has-sub">
+              <span class="sidebar-parent"><i class="fa fa-square-root-alt"></i> Determinan & Invers</span>
+              <ul class="sidebar-sub">
+                <li><a href="#" onclick="showContent('determinan')">Determinan</a></li>
+                <li><a href="#" onclick="showContent('invers')">Invers Matriks</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading"><i class="fa fa-video"></i> Video Belajar</h3>
+          <ul class="sidebar-menu sidebar-sub" style="display:block;">
+            <li><a href="#" onclick="showMedia('video','pengertian');">📹 Pengertian Matriks (Lokal)</a></li>
+            <li><a href="#" onclick="showMedia('video','operasi');">📹 Operasi Matriks (Lokal)</a></li>
+            <li><a href="#" onclick="showMedia('video','yt1');">▶ Pengenalan Matriks (YouTube)</a></li>
+            <li><a href="#" onclick="showMedia('video','yt2');">▶ Operasi & Perkalian (YouTube)</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading"><i class="fa fa-image"></i> Foto & Infografis</h3>
+          <ul class="sidebar-menu sidebar-sub" style="display:block;">
+            <li><a href="#" onclick="showMedia('foto','Matriks baris.jpg');">🖼 Matriks Baris</a></li>
+            <li><a href="#" onclick="showMedia('foto','gambar matriks.webp');">🖼 Gambar Matriks</a></li>
+            <li><a href="#" onclick="showMedia('foto','file/img_determinant.png');">🖼 Determinan</a></li>
+            <li><a href="#" onclick="showMedia('foto','file/img_multiplication.png');">🖼 Perkalian Matriks</a></li>
+            <li><a href="#" onclick="showMedia('foto','file/img_real_world.png');">🖼 Aplikasi Nyata</a></li>
+            <li><a href="#" onclick="showMedia('foto','file/matriks baris.png');">🖼 Matriks Baris (PNG)</a></li>
+            <li><a href="#" onclick="showMedia('foto','file/matriks identitas.png');">🖼 Matriks Identitas</a></li>
+            <li><a href="#" onclick="showMedia('foto','file/matriks diagonal.png');">🖼 Matriks Diagonal</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading"><i class="fa fa-file-alt"></i> Lembar Kerja (LKPD)</h3>
+          <ul class="sidebar-menu sidebar-sub" style="display:block;">
+            <li><a href="#" onclick="showLKPDInteractive();">📝 LKPD Tulis Manual &amp; Siap Cetak</a></li>
+            <li><a href="#" onclick="showPDF('file/lkpd matriks.pdf');">📄 LKPD Matriks</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading"><i class="fa fa-file-pdf"></i> Modul PDF</h3>
+          <ul class="sidebar-menu sidebar-sub" style="display:block;">
+            <li><a href="#" onclick="showPDF('file/JENIS MATRIKS.pdf');">📕 Modul Jenis Matriks</a></li>
+            <li><a href="#" onclick="showPDF('file/matriks.pdf');">📕 Modul Matriks Lengkap</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading" style="background: linear-gradient(135deg, #0d9488, #0f766e); color: #fff;"><i
+              class="fa fa-flask"></i> 🧪 Lab Aplikasi Riil</h3>
+          <ul class="sidebar-menu sidebar-sub" style="display:block;">
+            <li><a href="#" onclick="showContent('kriptografi')">🔑 Sandi Hill Cipher</a></li>
+            <li><a href="#" onclick="showContent('filterGambar')">🖼 Simulator Filter Gambar</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading"><i class="fa fa-tasks"></i> Evaluasi</h3>
+          <ul class="sidebar-menu sidebar-menu-simple">
+            <li><a href="#" onclick="showContent('soalAcak')"><i class="fa fa-random"></i> Soal Acak</a></li>
+            <li><a href="#" onclick="showContent('ujianMatriks')"><i class="fa fa-clipboard-list"></i> Ujian Matriks</a>
+            </li>
+            <li><a href="#" onclick="showContent('tanyaJawab')"><i class="fa fa-comments"></i> Tanya Jawab</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Content Area: Arsitektur SPA (Single Page Application). Setiap section dibungkus div dengan ID unik (misal: sec-pengertian) yang akan dipanggil secara dinamis oleh JavaScript. -->
+      <section class="content-area">
+
+        <!-- Section Beranda: Halaman selamat datang dengan banner utama -->
+        <div id="sec-beranda" class="content-section active">
+          <div class="hero-banner">
+            <div class="hero-text">
+              <span class="hero-tag">Selamat Datang di</span>
+              <h2>Media Pembelajaran<br /><em>Matriks</em></h2>
+              <p>Platform edukasi matematika interaktif untuk siswa SMP dan SMA. Dilengkapi materi, video, soal acak,
+                dan evaluasi berbasis Universitas Mataram.</p>
+              <div class="hero-btns">
+                <button class="btn-primary" onclick="showContent('pengertian')">Mulai Belajar</button>
+                <button class="btn-secondary" onclick="showContent('soalAcak')">Coba Soal Acak</button>
+              </div>
+            </div>
+            <div class="hero-visual">
+              <div class="matrix-visual">
+                <div class="matrix-bracket left">[</div>
+                <div class="matrix-grid">
+                  <span>a<sub>11</sub></span><span>a<sub>12</sub></span><span>a<sub>13</sub></span>
+                  <span>a<sub>21</sub></span><span>a<sub>22</sub></span><span>a<sub>23</sub></span>
+                  <span>a<sub>31</sub></span><span>a<sub>32</sub></span><span>a<sub>33</sub></span>
+                </div>
+                <div class="matrix-bracket right">]</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-row">
+            <div class="info-card" onclick="showContent('pengertian')">
+              <i class="fa fa-book"></i>
+              <h4>Materi Lengkap</h4>
+              <p>Pengertian, jenis, operasi, determinan, dan invers matriks.</p>
+            </div>
+            <div class="info-card" onclick="showContent('video')">
+              <i class="fa fa-play-circle"></i>
+              <h4>Video Belajar</h4>
+              <p>Video lokal dan YouTube untuk pemahaman visual.</p>
+            </div>
+            <div class="info-card" onclick="showContent('soalAcak')">
+              <i class="fa fa-random"></i>
+              <h4>Soal Acak</h4>
+              <p>Uji pemahamanmu dengan latihan soal yang diacak.</p>
+            </div>
+            <div class="info-card" onclick="showContent('tanyaJawab')">
+              <i class="fa fa-comments"></i>
+              <h4>Tanya Jawab</h4>
+              <p>FAQ dan diskusi seputar materi matriks.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TENTANG -->
+        <div id="sec-tentang" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-info-circle"></i> Tentang Website</h2>
+          </div>
+          <div class="text-content">
+            <p>Website <strong>MatriksEdu</strong> adalah media pembelajaran matematika yang dikembangkan sebagai proyek
+              pembelajaran interaktif berbasis web oleh Universitas Mataram. Platform ini dirancang untuk membantu siswa
+              SMP dan SMA dalam memahami konsep <em>Matriks</em> secara mendalam dan menyenangkan.</p>
+            <p>Fitur yang tersedia meliputi: materi teks, gambar, video, modul PDF/LKPD, contoh soal, soal evaluasi
+              acak, dan sesi tanya jawab interaktif.</p>
+          </div>
+        </div>
+
+        <div id="sec-pengertian" class="content-section"> <!-- Section materi Pengertian Matriks -->
+          <div class="page-header"> <!-- Container untuk judul halaman -->
+            <h2><i class="fa fa-book-open"></i> Pengertian Matriks</h2> <!-- Judul materi dengan ikon buku -->
+          </div> <!-- Akhir header halaman -->
+          <div class="text-content">
+            <h3>Apa Itu Matriks?</h3>
+            <p><strong>Matriks</strong> adalah susunan bilangan-bilangan yang disusun dalam baris dan kolom berbentuk
+              persegi panjang dan diapit oleh tanda kurung siku [ ] atau tanda kurung biasa ( ).</p>
+            <p>Bilangan-bilangan yang tersusun dalam matriks disebut <strong>elemen</strong> atau <strong>entri</strong>
+              matriks. Matriks biasa dilambangkan dengan huruf kapital seperti A, B, C, dan seterusnya.</p>
+
+            <div class="matriks-box">
+              <p><strong>Contoh Matriks A berordo 2×3:</strong></p>
+              <!-- Visualisasi Matriks: Menggunakan struktur div bersarang (tabel > baris > span) agar tampilan angka matriks bisa diatur rapi tanpa menggunakan tabel HTML standar. -->
+              <div class="matriks-display">
+                <span class="bracket">[</span>
+                <div class="matriks-tabel">
+                  <div class="baris"><span>1</span><span>2</span><span>3</span></div>
+                  <div class="baris"><span>4</span><span>5</span><span>6</span></div>
+                </div>
+                <span class="bracket">]</span>
+              </div>
+              <p class="matriks-keterangan">Matriks di atas memiliki <strong>2 baris</strong> dan <strong>3
+                  kolom</strong>, sehingga berordo <strong>2 × 3</strong>.</p>
+            </div>
+
+            <h3>Notasi Matriks</h3>
+            <p>Jika A adalah matriks berordo m × n, maka elemen baris ke-i dan kolom ke-j ditulis sebagai
+              <strong>a<sub>ij</sub></strong>.
+            </p>
+            <ul>
+              <li><em>m</em> = banyaknya baris</li>
+              <li><em>n</em> = banyaknya kolom</li>
+              <li>Elemen a<sub>11</sub> = elemen baris 1, kolom 1</li>
+              <li>Elemen a<sub>23</sub> = elemen baris 2, kolom 3</li>
+            </ul>
+
+            <div class="info-box">
+              <i class="fa fa-lightbulb"></i>
+              <p><strong>Penting:</strong> Dua matriks dikatakan <em>sama</em> apabila mempunyai ordo yang sama dan
+                setiap elemen yang seletak bernilai sama.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTASI -->
+        <div id="sec-notasi" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-superscript"></i> Notasi & Ordo Matriks</h2>
+          </div>
+          <div class="text-content">
+            <p><strong>Ordo matriks</strong> menyatakan ukuran matriks, yaitu banyak baris dikali banyak kolom (m × n).
+            </p>
+            <ul>
+              <li>Matriks 1×1: satu baris, satu kolom</li>
+              <li>Matriks 2×2: dua baris, dua kolom (matriks persegi)</li>
+              <li>Matriks 3×2: tiga baris, dua kolom</li>
+            </ul>
+            <div class="matriks-box">
+              <p><strong>Matriks B berordo 3×2:</strong></p>
+              <div class="matriks-display">
+                <span class="bracket">[</span>
+                <div class="matriks-tabel">
+                  <div class="baris"><span>2</span><span>7</span></div>
+                  <div class="baris"><span>5</span><span>1</span></div>
+                  <div class="baris"><span>8</span><span>3</span></div>
+                </div>
+                <span class="bracket">]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JENIS MATRIKS -->
+        <div id="sec-jenisMatriks" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-layer-group"></i> Jenis-Jenis Matriks</h2>
+          </div>
+          <div class="text-content">
+            <div class="jenis-grid">
+              <div class="jenis-card">
+                <h4>1. Matriks Baris</h4>
+                <p>Matriks yang hanya memiliki <strong>satu baris</strong> (berordo 1 × n).</p>
+                <div class="matriks-display kecil">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>3</span><span>5</span><span>7</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+              </div>
+              <div class="jenis-card">
+                <h4>2. Matriks Kolom</h4>
+                <p>Matriks yang hanya memiliki <strong>satu kolom</strong> (berordo m × 1).</p>
+                <div class="matriks-display kecil">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>2</span></div>
+                    <div class="baris"><span>6</span></div>
+                    <div class="baris"><span>9</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+              </div>
+              <div class="jenis-card">
+                <h4>3. Matriks Persegi</h4>
+                <p>Matriks dengan jumlah baris = kolom (berordo n × n).</p>
+                <div class="matriks-display kecil">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>1</span><span>2</span></div>
+                    <div class="baris"><span>3</span><span>4</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+              </div>
+              <div class="jenis-card">
+                <h4>4. Matriks Nol</h4>
+                <p>Matriks yang semua elemennya bernilai <strong>0</strong>.</p>
+                <div class="matriks-display kecil">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>0</span><span>0</span></div>
+                    <div class="baris"><span>0</span><span>0</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+              </div>
+              <div class="jenis-card">
+                <h4>5. Matriks Identitas</h4>
+                <p>Matriks persegi dengan diagonal utama bernilai <strong>1</strong>, lainnya <strong>0</strong>.</p>
+                <div class="matriks-display kecil">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>1</span><span>0</span></div>
+                    <div class="baris"><span>0</span><span>1</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+              </div>
+              <div class="jenis-card">
+                <h4>6. Matriks Segitiga</h4>
+                <p>Elemen di bawah/atas diagonal utama semua nol. Ada segitiga atas dan bawah.</p>
+                <div class="matriks-display kecil">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>2</span><span>3</span></div>
+                    <div class="baris"><span>0</span><span>5</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRANSPOSE -->
+        <div id="sec-transpose" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-retweet"></i> Transpose Matriks</h2>
+          </div>
+          <div class="text-content">
+            <p><strong>Transpose matriks A</strong>, ditulis Aᵀ atau A', adalah matriks yang diperoleh dengan menukar
+              baris menjadi kolom dan sebaliknya.</p>
+            <div class="matriks-box">
+              <p><strong>Jika:</strong></p>
+              <div class="matriks-display">
+                <span class="bracket">[</span>
+                <div class="matriks-tabel">
+                  <div class="baris"><span>1</span><span>2</span><span>3</span></div>
+                  <div class="baris"><span>4</span><span>5</span><span>6</span></div>
+                </div>
+                <span class="bracket">]</span>
+              </div>
+              <p><strong>Maka Aᵀ =</strong></p>
+              <div class="matriks-display">
+                <span class="bracket">[</span>
+                <div class="matriks-tabel">
+                  <div class="baris"><span>1</span><span>4</span></div>
+                  <div class="baris"><span>2</span><span>5</span></div>
+                  <div class="baris"><span>3</span><span>6</span></div>
+                </div>
+                <span class="bracket">]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="sec-operasi" class="content-section"> <!-- Section untuk materi Operasi Penjumlahan & Pengurangan -->
+          <div class="page-header"> <!-- Header judul halaman operasi -->
+            <h2><i class="fa fa-calculator"></i> Operasi Matriks</h2> <!-- Judul materi dengan ikon kalkulator -->
+          </div> <!-- Akhir header halaman -->
+          <div class="text-content">
+            <h3>Penjumlahan Matriks</h3>
+            <p>Dua matriks dapat dijumlahkan <strong>jika berordo sama</strong>. Penjumlahan dilakukan elemen demi
+              elemen yang seletak.</p>
+            <div class="matriks-box">
+              <p><strong>Contoh: A + B</strong></p>
+              <div class="operasi-display">
+                <div class="matriks-display">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>1</span><span>2</span></div>
+                    <div class="baris"><span>3</span><span>4</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+                <span class="op-sign">+</span>
+                <div class="matriks-display">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>5</span><span>6</span></div>
+                    <div class="baris"><span>7</span><span>8</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+                <span class="op-sign">=</span>
+                <div class="matriks-display">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>6</span><span>8</span></div>
+                    <div class="baris"><span>10</span><span>12</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+              </div>
+            </div>
+
+            <h3>Pengurangan Matriks</h3>
+            <p>Sama seperti penjumlahan, pengurangan dilakukan elemen demi elemen yang seletak pada matriks berordo
+              sama.</p>
+            <div class="matriks-box">
+              <p><strong>Contoh: A − B</strong></p>
+              <div class="operasi-display">
+                <div class="matriks-display">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>5</span><span>8</span></div>
+                    <div class="baris"><span>3</span><span>6</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+                <span class="op-sign">−</span>
+                <div class="matriks-display">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>2</span><span>4</span></div>
+                    <div class="baris"><span>1</span><span>3</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+                <span class="op-sign">=</span>
+                <div class="matriks-display">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>3</span><span>4</span></div>
+                    <div class="baris"><span>2</span><span>3</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+              </div>
+            </div>
+
+            <h3>Perkalian Skalar</h3>
+            <p>Setiap elemen matriks dikalikan dengan bilangan skalar <em>k</em>.</p>
+            <div class="matriks-box">
+              <p><strong>Contoh: 2 × A</strong></p>
+              <div class="operasi-display">
+                <span class="op-sign">2 ×</span>
+                <div class="matriks-display">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>3</span><span>1</span></div>
+                    <div class="baris"><span>4</span><span>2</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+                <span class="op-sign">=</span>
+                <div class="matriks-display">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>6</span><span>2</span></div>
+                    <div class="baris"><span>8</span><span>4</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PERKALIAN MATRIKS -->
+        <div id="sec-perkalian" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-times"></i> Perkalian Matriks</h2>
+          </div>
+          <div class="text-content">
+            <p>Perkalian matriks A (ordo m×n) dengan B (ordo n×p) menghasilkan matriks C (ordo m×p). <strong>Kolom A
+                harus sama dengan baris B.</strong></p>
+            <div class="matriks-box">
+              <p><strong>Contoh: A × B</strong></p>
+              <div class="operasi-display">
+                <div class="matriks-display">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>1</span><span>2</span></div>
+                    <div class="baris"><span>3</span><span>4</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+                <span class="op-sign">×</span>
+                <div class="matriks-display">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>5</span><span>6</span></div>
+                    <div class="baris"><span>7</span><span>8</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+                <span class="op-sign">=</span>
+                <div class="matriks-display">
+                  <span class="bracket">[</span>
+                  <div class="matriks-tabel">
+                    <div class="baris"><span>19</span><span>22</span></div>
+                    <div class="baris"><span>43</span><span>50</span></div>
+                  </div>
+                  <span class="bracket">]</span>
+                </div>
+              </div>
+              <p class="matriks-keterangan">c<sub>11</sub> = (1×5)+(2×7) = 19 &nbsp;|&nbsp; c<sub>12</sub> = (1×6)+(2×8)
+                = 22</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DETERMINAN -->
+        <div id="sec-determinan" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-square-root-alt"></i> Determinan Matriks</h2>
+          </div>
+          <div class="text-content">
+            <p><strong>Determinan</strong> hanya berlaku untuk matriks persegi. Determinan matriks A ditulis det(A) atau
+              |A|.</p>
+
+            <h3>Determinan Matriks 2×2</h3>
+            <div class="matriks-box">
+              <p>Jika A = </p>
+              <div class="matriks-display">
+                <span class="bracket">[</span>
+                <div class="matriks-tabel">
+                  <div class="baris"><span>a</span><span>b</span></div>
+                  <div class="baris"><span>c</span><span>d</span></div>
+                </div>
+                <span class="bracket">]</span>
+              </div>
+              <p>Maka <strong>det(A) = ad − bc</strong></p>
+            </div>
+            <div class="matriks-box">
+              <p><strong>Contoh:</strong></p>
+              <div class="matriks-display">
+                <span class="bracket">|</span>
+                <div class="matriks-tabel">
+                  <div class="baris"><span>3</span><span>2</span></div>
+                  <div class="baris"><span>1</span><span>4</span></div>
+                </div>
+                <span class="bracket">|</span>
+              </div>
+              <p>= (3 × 4) − (2 × 1) = 12 − 2 = <strong>10</strong></p>
+            </div>
+
+            <h3>Determinan Matriks 3×3 (Aturan Sarrus)</h3>
+            <p>Kalikan elemen sepanjang diagonal utama (positif) dan diagonal minor (negatif), lalu jumlahkan.</p>
+            <div class="info-box">
+              <i class="fa fa-info-circle"></i>
+              <p>det(A) = a₁₁(a₂₂a₃₃−a₂₃a₃₂) − a₁₂(a₂₁a₃₃−a₂₃a₃₁) + a₁₃(a₂₁a₃₂−a₂₂a₃₁)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- INVERS -->
+        <div id="sec-invers" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-undo"></i> Invers Matriks</h2>
+          </div>
+          <div class="text-content">
+            <p>Invers matriks A ditulis A⁻¹. Matriks memiliki invers jika <strong>det(A) ≠ 0</strong>.</p>
+            <h3>Invers Matriks 2×2</h3>
+            <div class="matriks-box">
+              <p>Jika A = </p>
+              <div class="matriks-display">
+                <span class="bracket">[</span>
+                <div class="matriks-tabel">
+                  <div class="baris"><span>a</span><span>b</span></div>
+                  <div class="baris"><span>c</span><span>d</span></div>
+                </div>
+                <span class="bracket">]</span>
+              </div>
+              <p>Maka:</p>
+              <div class="matriks-display">
+                <p style="margin:0 8px">A⁻¹ = 1/det(A) ×</p>
+                <span class="bracket">[</span>
+                <div class="matriks-tabel">
+                  <div class="baris"><span>d</span><span>−b</span></div>
+                  <div class="baris"><span>−c</span><span>a</span></div>
+                </div>
+                <span class="bracket">]</span>
+              </div>
+            </div>
+            <div class="matriks-box">
+              <p><strong>Contoh: A = </strong></p>
+              <div class="matriks-display">
+                <span class="bracket">[</span>
+                <div class="matriks-tabel">
+                  <div class="baris"><span>3</span><span>2</span></div>
+                  <div class="baris"><span>1</span><span>4</span></div>
+                </div>
+                <span class="bracket">]</span>
+              </div>
+              <p>det(A) = 10</p>
+              <div class="matriks-display">
+                <p style="margin:0 8px">A⁻¹ = 1/10 ×</p>
+                <span class="bracket">[</span>
+                <div class="matriks-tabel">
+                  <div class="baris"><span>4</span><span>−2</span></div>
+                  <div class="baris"><span>−1</span><span>3</span></div>
+                </div>
+                <span class="bracket">]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIDEO -->
+        <div id="sec-video" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-video"></i> Video Pembelajaran</h2>
+          </div>
+          <div class="text-content">
+            <h3>Video Lokal</h3>
+            <p>Video berikut merupakan video pembelajaran yang tersedia secara lokal.</p>
+            <div class="video-grid">
+              <div class="video-item">
+                <video controls width="100%">
+                  <source src="pengertian matriks.mp4" type="video/mp4" />
+                  <p>Browser Anda tidak mendukung video. <a href="pengertian matriks.mp4">Unduh video</a>.</p>
+                </video>
+                <p class="video-label">Video 1: Pengertian & Notasi Matriks</p>
+              </div>
+              <div class="video-item">
+                <video controls width="100%">
+                  <source src="operasi matriks.mp4" type="video/mp4" />
+                  <p>Browser Anda tidak mendukung video. <a href="operasi matriks.mp4">Unduh video</a>.</p>
+                </video>
+                <p class="video-label">Video 2: Operasi Matriks</p>
+              </div>
+            </div>
+
+            <h3>Video YouTube</h3>
+            <div class="video-grid">
+              <div class="video-item">
+                <div class="yt-embed">
+                  <iframe width="100%" height="220" src="https://www.youtube.com/embed/xyAuNHPsq-g"
+                    title="Matriks Matematika" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p class="video-label">Pengenalan Matriks – Matematika SMA</p>
+              </div>
+              <div class="video-item">
+                <div class="yt-embed">
+                  <iframe width="100%" height="220" src="https://www.youtube.com/embed/rowWM-MijXU"
+                    title="Operasi Matriks" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p class="video-label">Operasi & Perkalian Matriks</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GAMBAR -->
+        <div id="sec-gambar" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-image"></i> Gambar & Infografis</h2>
+          </div>
+          <div class="text-content">
+            <div class="gambar-grid">
+              <div class="gambar-item">
+                <div class="gambar-placeholder">
+                  <div class="matriks-visual-lg">
+                    <div class="matrix-bracket left">[</div>
+                    <div class="matrix-grid">
+                      <span>1</span><span>2</span><span>3</span>
+                      <span>4</span><span>5</span><span>6</span>
+                      <span>7</span><span>8</span><span>9</span>
+                    </div>
+                    <div class="matrix-bracket right">]</div>
+                  </div>
+                </div>
+                <p>Ilustrasi Matriks 3×3</p>
+              </div>
+              <div class="gambar-item">
+                <div class="gambar-placeholder jenis-chart">
+                  <div class="jenis-infografis">
+                    <span>Baris ✔</span><span>Kolom ✔</span>
+                    <span>Persegi ✔</span><span>Identitas ✔</span>
+                    <span>Nol ✔</span><span>Segitiga ✔</span>
+                  </div>
+                </div>
+                <p>Jenis-Jenis Matriks</p>
+              </div>
+            </div>
+            <div class="info-box">
+              <i class="fa fa-info-circle"></i>
+              <img src="Matriks baris.jpg">
+            </div>
+          </div>
+          <div class="info-box">
+            <img src="gambar matriks.webp">
+          </div>
+        </div>
+
+        <!-- PDF / LKPD -->
+        <div id="sec-pdf" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-file-pdf"></i> Modul PDF / LKPD</h2>
+          </div>
+          <div class="text-content">
+            <div class="pdf-list">
+              <div class="pdf-item">
+                <i class="fa fa-file-pdf pdf-icon"></i>
+                <div class="pdf-info">
+                  <strong>Modul 1: Pengertian & Jenis Matriks</strong>
+                  <span>Format: PDF | Tingkat: SMP / SMA</span>
+                </div>
+                <a href="file/JENIS MATRIKS.pdf" target="_blank" class="btn-download">Unduh <i
+                    class="fa fa-download"></i></a>
+              </div>
+              <div class="pdf-item">
+                <i class="fa fa-file-pdf pdf-icon"></i>
+                <div class="pdf-info">
+                  <strong>Modul 2: Modul Matriks Lengkap</strong>
+                  <span>Format: PDF | Tingkat: SMA</span>
+                </div>
+                <a href="file/matriks.pdf" target="_blank" class="btn-download">Unduh <i class="fa fa-download"></i></a>
+              </div>
+              <div class="pdf-item">
+                <i class="fa fa-file-alt pdf-icon lkpd"></i>
+                <div class="pdf-info">
+                  <strong>LKPD Matriks: Eksplorasi Determinan Matriks</strong>
+                  <span>Format: PDF | Lembar Kerja Peserta Didik</span>
+                </div>
+                <a href="file/lkpd matriks.pdf" target="_blank" class="btn-download">Unduh <i
+                    class="fa fa-download"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="sec-soalAcak" class="content-section"> <!-- Section untuk latihan soal acak (Evaluasi) -->
+          <div class="page-header"> <!-- Header judul halaman latihan soal -->
+            <h2><i class="fa fa-random"></i> Latihan Soal Acak</h2> <!-- Judul dengan ikon acak -->
+          </div> <!-- Akhir header -->
+          <div class="text-content"> <!-- Container teks konten -->
+            <p>Klik tombol di bawah untuk mendapatkan soal latihan secara acak. Jawab soal dan cek hasilnya!</p>
+            <!-- Instruksi kuis -->
+            <button class="btn-primary" onclick="buildQuiz()" id="startQuizBtn">
+              <!-- Tombol untuk membangun kuis baru -->
+              <i class="fa fa-play"></i> Mulai Latihan <!-- Teks tombol dengan ikon play -->
+            </button> <!-- Akhir tombol kuis -->
+            <div id="quizContainer" style="display:none; margin-top:20px;"></div>
+            <!-- Tempat memunculkan soal kuis (default: tersembunyi) -->
+          </div> <!-- Akhir container teks -->
+        </div> <!-- Akhir section soal acak -->
+
+        <div id="sec-ujianMatriks" class="content-section"> <!-- Section fitur Ujian Matriks -->
+          <div class="page-header"> <!-- Header judul ujian -->
+            <h2><i class="fa fa-clipboard-list"></i> Ujian Matriks</h2> <!-- Judul dengan ikon papan klip -->
+          </div> <!-- Akhir header -->
+          <div class="text-content"> <!-- Kontainer teks ujian -->
+            <div id="examNameForm"> <!-- Form input nama ujian -->
+              <div class="form-group" style="margin-bottom:15px;"> <!-- Group input nama -->
+                <label for="examNameInput"><i class="fa fa-user"></i> Nama Peserta</label> <!-- Label input nama -->
+                <input type="text" id="examNameInput" placeholder="Masukkan nama kamu..." /> <!-- Input nama -->
+              </div> <!-- Akhir group -->
+              <button class="btn-primary" onclick="startExam()" id="examStartBtn"> <!-- Tombol mulai ujian -->
+                <i class="fa fa-play"></i> Mulai Ujian <!-- Teks tombol -->
+              </button> <!-- Akhir tombol -->
+            </div> <!-- Akhir form nama -->
+            <div id="examContainer" style="display:none"></div> <!-- Kontainer tempat ujian muncul -->
+          </div> <!-- Akhir container teks -->
+        </div> <!-- Akhir section ujian -->
+
+        <!-- TANYA JAWAB -->
+        <div id="sec-tanyaJawab" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-comments"></i> Tanya Jawab</h2>
+          </div>
+          <div class="text-content">
+            <div class="faq-list">
+              <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                  <i class="fa fa-question-circle"></i> Apa itu matriks?
+                  <i class="fa fa-chevron-down faq-arrow"></i>
+                </div>
+                <div class="faq-a">
+                  Matriks adalah susunan bilangan yang diatur dalam baris dan kolom berbentuk persegi panjang dan diapit
+                  oleh tanda kurung. Bilangan-bilangan tersebut disebut elemen atau entri matriks.
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                  <i class="fa fa-question-circle"></i> Apa syarat dua matriks bisa dijumlahkan?
+                  <i class="fa fa-chevron-down faq-arrow"></i>
+                </div>
+                <div class="faq-a">
+                  Dua matriks dapat dijumlahkan atau dikurangkan hanya jika keduanya memiliki <strong>ordo yang
+                    sama</strong> (jumlah baris dan kolom yang sama).
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                  <i class="fa fa-question-circle"></i> Kapan matriks memiliki invers?
+                  <i class="fa fa-chevron-down faq-arrow"></i>
+                </div>
+                <div class="faq-a">
+                  Sebuah matriks persegi memiliki invers (disebut <em>matriks non-singular</em>) apabila nilai
+                  determinannya <strong>tidak sama dengan nol</strong> (det(A) ≠ 0). Jika det(A) = 0, maka matriks
+                  disebut singular dan tidak memiliki invers.
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                  <i class="fa fa-question-circle"></i> Apa bedanya matriks identitas dan matriks nol?
+                  <i class="fa fa-chevron-down faq-arrow"></i>
+                </div>
+                <div class="faq-a">
+                  <strong>Matriks identitas (I)</strong> adalah matriks persegi dengan semua elemen diagonal utama = 1
+                  dan elemen lainnya = 0. <strong>Matriks nol (O)</strong> adalah matriks yang semua elemennya = 0.
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                  <i class="fa fa-question-circle"></i> Apakah perkalian matriks bersifat komutatif?
+                  <i class="fa fa-chevron-down faq-arrow"></i>
+                </div>
+                <div class="faq-a">
+                  <strong>Tidak.</strong> Perkalian matriks pada umumnya <em>tidak bersifat komutatif</em>, artinya A ×
+                  B belum tentu sama dengan B × A. Ini adalah salah satu perbedaan utama perkalian matriks dengan
+                  perkalian bilangan biasa.
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                  <i class="fa fa-question-circle"></i> Apa aplikasi nyata matriks dalam kehidupan?
+                  <i class="fa fa-chevron-down faq-arrow"></i>
+                </div>
+                <div class="faq-a">
+                  Matriks digunakan dalam banyak bidang, antara lain: grafis komputer (transformasi gambar 3D), ekonomi
+                  (model input-output Leontief), kriptografi (enkripsi data), fisika (mekanika kuantum), dan
+                  pembelajaran mesin (machine learning).
+                </div>
+              </div>
+            </div>
+
+            <div class="tanya-form">
+              <h3><i class="fa fa-robot"></i> Tanya Jawab Otomatis</h3>
+              <p style="font-size: 13.5px; color: #666; margin-bottom: 16px;">Ketik pertanyaanmu tentang matriks dan
+                dapatkan jawaban otomatis secara instan!</p>
+              <div id="chatHistory" class="chat-history"></div>
+              <div class="form-group">
+                <label>Nama</label>
+                <input type="text" id="tNama" placeholder="Nama kamu..." />
+              </div>
+              <div class="form-group">
+                <label>Pertanyaan</label>
+                <textarea id="tPertanyaan" placeholder="Tulis pertanyaanmu tentang matriks..." rows="3"></textarea>
+              </div>
+              <button class="btn-primary" onclick="kirimPertanyaan()">Kirim <i class="fa fa-paper-plane"></i></button>
+              <p id="tFeedback" class="soal-feedback"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- =============================================
+             NEW SECTIONS FOR CONTENT AREA
+             ============================================= -->
+
+        <!-- PDF VIEWER SECTION -->
+        <div id="sec-pdf-viewer" class="content-section">
+          <div class="page-header">
+            <h2 id="pdfViewerTitle"><i class="fa fa-file-pdf"></i> Penampil Modul PDF</h2>
+          </div>
+          <div class="text-content">
+            <p id="pdfViewerDesc">Membuka file PDF...</p>
+            <div class="pdf-container">
+              <iframe id="pdfIframe" src="" width="100%" height="600px" style="border:none;"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEDIA VIEWER SECTION -->
+        <div id="sec-media-viewer" class="content-section">
+          <div class="page-header">
+            <h2 id="mediaViewerTitle"><i class="fa fa-photo-video"></i> Penampil Media</h2>
+          </div>
+          <div class="text-content">
+            <div class="media-viewer-container">
+              <div class="media-viewer-content" id="mediaViewerContent">
+                <p style="color:#888;">Pilih media dari sidebar atau checklist untuk ditampilkan.</p>
+              </div>
+              <p class="video-label" id="mediaViewerLabel" style="margin-top:12px; font-weight:600;"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE LKPD SECTION -->
+        <div id="sec-lkpd-interaktif" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-laptop-code"></i> Lembar Kerja Peserta Didik (LKPD) Interaktif</h2>
+          </div>
+          <div class="text-content">
+            <p>Pilih LKPD Interaktif dari daftar di bawah ini untuk mulai belajar secara aktif. Guru dapat mengedit isi
+              LKPD menggunakan editor JSON di sidebar kanan.</p>
+            <div style="margin-bottom:20px; display:flex; gap:10px; flex-wrap:wrap;" id="lkpdTabsContainer"></div>
+            <div id="lkpdWorksheetContainer"></div>
+          </div>
+        </div>
+
+        <!-- LAB 1: HILL CIPHER KRIPTOGRAFI -->
+        <div id="sec-kriptografi" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-key"></i> Lab Kriptografi Hill Cipher</h2>
+          </div>
+          <div class="text-content">
+            <p>Kriptografi adalah ilmu menyandi pesan. Salah satu metodenya adalah <strong>Hill Cipher</strong>, yang
+              memanfaatkan <strong>perkalian matriks dan operasi modulo 26</strong> (jumlah huruf alfabet A-Z) untuk
+              mengunci pesan.</p>
+
+            <div
+              style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin-top:20px;">
+              <!-- Panel Enkripsi -->
+              <div style="background:#fcf8f2; border:1.5px solid #ebdcb9; border-radius:10px; padding:18px;">
+                <h3 style="color:#d97706; margin-bottom:12px; display:flex; align-items:center; gap:8px;"><i
+                    class="fa fa-lock"></i> Enkripsi (Kunci Pesan)</h3>
+                <div class="form-group" style="margin-bottom:12px;">
+                  <label style="font-weight:700; color:#5c4a24;">Ketik Pesan Rahasia (Huruf A-Z):</label>
+                  <input type="text" id="cryptoPlaintext" value="MATRIKS" placeholder="Contoh: MATRIKS"
+                    style="text-transform: uppercase;" />
+                </div>
+                <div class="form-group" style="margin-bottom:12px;">
+                  <label style="font-weight:700; color:#5c4a24; display:block; margin-bottom:4px;">Matriks Kunci K (2×2,
+                    Invertible Mod 26):</label>
+                  <div style="display:grid; grid-template-columns: 60px 60px; gap:8px; justify-content:start;">
+                    <input type="number" id="keyK00" value="3" style="text-align:center; font-weight:700;" />
+                    <input type="number" id="keyK01" value="3" style="text-align:center; font-weight:700;" />
+                    <input type="number" id="keyK10" value="2" style="text-align:center; font-weight:700;" />
+                    <input type="number" id="keyK11" value="5" style="text-align:center; font-weight:700;" />
+                  </div>
+                  <span style="font-size:11px; color:#7c6e52; display:block; margin-top:4px;">Matriks bawaan: det(K) = 9
+                    (invertible karena gcd(9, 26) = 1).</span>
+                </div>
+                <button class="btn-primary" onclick="doHillEncrypt()"
+                  style="background:#d97706; border:none; width:100%; cursor:pointer;"><i class="fa fa-arrow-right"></i>
+                  Enkripsi Sekarang</button>
+              </div>
+
+              <!-- Panel Dekripsi -->
+              <div style="background:#f4f0fa; border:1.5px solid #decceb; border-radius:10px; padding:18px;">
+                <h3 style="color:#7c3aed; margin-bottom:12px; display:flex; align-items:center; gap:8px;"><i
+                    class="fa fa-unlock"></i> Dekripsi (Buka Kunci)</h3>
+                <div class="form-group" style="margin-bottom:12px;">
+                  <label style="font-weight:700; color:#4a245c;">Ketik Ciphertext (Sandi Rahasia):</label>
+                  <input type="text" id="cryptoCiphertext" placeholder="Masukkan teks sandi..."
+                    style="text-transform: uppercase;" />
+                </div>
+                <div class="form-group" style="margin-bottom:12px;">
+                  <label style="font-weight:700; color:#4a245c; display:block; margin-bottom:4px;">Matriks Kunci
+                    Dekripsi K⁻¹ (Otomatis Dihitung):</label>
+                  <div style="display:grid; grid-template-columns: 60px 60px; gap:8px; justify-content:start;">
+                    <input type="text" id="keyInv00" value="15" disabled
+                      style="text-align:center; font-weight:700; background:#e2d9f3;" />
+                    <input type="text" id="keyInv01" value="17" disabled
+                      style="text-align:center; font-weight:700; background:#e2d9f3;" />
+                    <input type="text" id="keyInv10" value="20" disabled
+                      style="text-align:center; font-weight:700; background:#e2d9f3;" />
+                    <input type="text" id="keyInv11" value="9" disabled
+                      style="text-align:center; font-weight:700; background:#e2d9f3;" />
+                  </div>
+                  <span style="font-size:11px; color:#5c4a8c; display:block; margin-top:4px;">Didapatkan dari rumus
+                    adjoin invers modul 26.</span>
+                </div>
+                <button class="btn-primary" onclick="doHillDecrypt()"
+                  style="background:#7c3aed; border:none; width:100%; cursor:pointer;"><i class="fa fa-arrow-left"></i>
+                  Dekripsi Sekarang</button>
+              </div>
+            </div>
+
+            <!-- Area Hasil Langkah-langkah Matematika -->
+            <div id="cryptoStepCard"
+              style="display:none; margin-top:20px; background:#fff; border:1px dashed #cccccc; border-radius:10px; padding:20px; animation: premiumEnter 0.4s ease;">
+              <h4 style="border-bottom:2px solid #5c4a24; padding-bottom:6px; margin-bottom:12px; color:#5c4a24;"><i
+                  class="fa fa-calculator"></i> Analisis Langkah Matematika</h4>
+              <div id="cryptoStepContent"
+                style="font-family:'Courier New', monospace, sans-serif; font-size:13.5px; white-space:pre-wrap; line-height:1.5;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAB 2: SIMULATOR FILTER GAMBAR (KONVOLUSI CITRA) -->
+        <div id="sec-filterGambar" class="content-section">
+          <div class="page-header">
+            <h2><i class="fa fa-magic"></i> Simulator Filter Gambar (Konvolusi)</h2>
+          </div>
+          <div class="text-content">
+            <p>Pernahkah kamu penasaran bagaimana Instagram mem-blur atau mempertajam fotomu? Hal itu murni menggunakan
+              <strong>operasi matematika konvolusi matriks</strong>! Sebuah matriks kernel 3×3 digeser ke seluruh piksel
+              gambar untuk mengubah warnanya secara dinamis.</p>
+
+            <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:20px;">
+              <!-- Control Panel -->
+              <div
+                style="flex:1; min-width:300px; background:#f0f7f6; border:1.5px solid #bde3df; border-radius:10px; padding:18px;">
+                <h3 style="color:#0f766e; margin-bottom:12px; display:flex; align-items:center; gap:8px;"><i
+                    class="fa fa-sliders-h"></i> Kontrol Filter Matriks</h3>
+
+                <!-- Preset Buttons -->
+                <div style="margin-bottom:15px;">
+                  <strong style="font-size:13px; color:#115e59; display:block; margin-bottom:8px;">Pilih Preset
+                    Efek:</strong>
+                  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px;">
+                    <button class="btn-secondary" onclick="loadFilterPreset('edge')"
+                      style="padding:6px 12px; font-size:12px; background:#0f766e; color:#fff; border:none; cursor:pointer;">Deteksi
+                      Tepi</button>
+                    <button class="btn-secondary" onclick="loadFilterPreset('sharpen')"
+                      style="padding:6px 12px; font-size:12px; background:#0f766e; color:#fff; border:none; cursor:pointer;">Pertajam</button>
+                    <button class="btn-secondary" onclick="loadFilterPreset('emboss')"
+                      style="padding:6px 12px; font-size:12px; background:#0f766e; color:#fff; border:none; cursor:pointer;">Emboss</button>
+                    <button class="btn-secondary" onclick="loadFilterPreset('blur')"
+                      style="padding:6px 12px; font-size:12px; background:#0f766e; color:#fff; border:none; cursor:pointer;">Blur
+                      (Kabur)</button>
+                  </div>
+                </div>
+
+                <!-- Kernel Matrix Grid Input -->
+                <div style="margin-bottom:15px;">
+                  <strong style="font-size:13px; color:#115e59; display:block; margin-bottom:8px;">Kernel Matriks Kustom
+                    (3×3):</strong>
+                  <div style="display:grid; grid-template-columns: repeat(3, 50px); gap:6px; justify-content:start;">
+                    <input type="number" id="ker00" value="-1" step="0.1"
+                      style="text-align:center; font-weight:700; height:36px; padding:0;" />
+                    <input type="number" id="ker01" value="-1" step="0.1"
+                      style="text-align:center; font-weight:700; height:36px; padding:0;" />
+                    <input type="number" id="ker02" value="-1" step="0.1"
+                      style="text-align:center; font-weight:700; height:36px; padding:0;" />
+                    <input type="number" id="ker10" value="-1" step="0.1"
+                      style="text-align:center; font-weight:700; height:36px; padding:0;" />
+                    <input type="number" id="ker11" value="8" step="0.1"
+                      style="text-align:center; font-weight:700; height:36px; padding:0;" />
+                    <input type="number" id="ker12" value="-1" step="0.1"
+                      style="text-align:center; font-weight:700; height:36px; padding:0;" />
+                    <input type="number" id="ker20" value="-1" step="0.1"
+                      style="text-align:center; font-weight:700; height:36px; padding:0;" />
+                    <input type="number" id="ker21" value="-1" step="0.1"
+                      style="text-align:center; font-weight:700; height:36px; padding:0;" />
+                    <input type="number" id="ker22" value="-1" step="0.1"
+                      style="text-align:center; font-weight:700; height:36px; padding:0;" />
+                  </div>
+                </div>
+
+                <!-- Custom Upload -->
+                <div style="margin-bottom:15px;">
+                  <strong style="font-size:13px; color:#115e59; display:block; margin-bottom:6px;">Ganti Foto
+                    (Opsional):</strong>
+                  <input type="file" id="filterImageUpload" accept="image/*" style="font-size:11px;"
+                    onchange="handleFilterImageUpload(this)" />
+                </div>
+
+                <button class="btn-primary" onclick="applyMatrixFilter()"
+                  style="background:#0d9488; border:none; width:100%; cursor:pointer;"><i class="fa fa-cogs"></i>
+                  Terapkan Filter Matriks</button>
+              </div>
+
+              <!-- Display Canvas Panel -->
+              <div
+                style="flex:1.5; min-width:320px; display:flex; flex-direction:column; gap:12px; background:#ffffff; border:1px solid #e2e8f0; border-radius:10px; padding:18px;">
+                <div style="display:flex; gap:12px; justify-content:space-around; flex-wrap:wrap;">
+                  <div style="text-align:center;">
+                    <span style="font-size:12px; font-weight:700; color:#555; display:block; margin-bottom:6px;">Gambar
+                      Asli</span>
+                    <canvas id="filterCanvasOrig" width="220" height="180"
+                      style="border:1.5px dashed #cbd5e1; border-radius:8px; background:#f8fafc;"></canvas>
+                  </div>
+                  <div style="text-align:center;">
+                    <span
+                      style="font-size:12px; font-weight:700; color:#0f766e; display:block; margin-bottom:6px;">Hasil
+                      Konvolusi Matriks</span>
+                    <canvas id="filterCanvasRes" width="220" height="180"
+                      style="border:1.5px solid #0f766e; border-radius:8px; background:#f8fafc; box-shadow:0 4px 6px -1px rgba(15,118,110,0.1);"></canvas>
+                  </div>
+                </div>
+
+                <!-- Explanation -->
+                <div
+                  style="background:#f8fafc; border-radius:6px; padding:10px; border-left:4px solid #0d9488; font-size:12.5px; color:#475569; line-height:1.45;">
+                  <strong style="color:#0f766e;"><i class="fa fa-info-circle"></i> Penjelasan Matematika:</strong>
+                  Setiap piksel baru $P(x,y)$ didapatkan dari dot-product nilai 9 piksel tetangga dengan 9 nilai elemen
+                  kernel matriks, lalu dijumlahkan.
+                  <div
+                    style="text-align:center; font-weight:bold; margin-top:4px; font-family:serif; font-size:14px; color:#000;">
+                    P<sub>baru</sub> = &Sigma; K<sub>ij</sub> &times; P<sub>ij</sub>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Sidebar Kanan: Profil, checklist media, dan info LKPD -->
+      <aside class="right-sidebar">
+        <!-- Widget Profil Pengguna -->
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading"><i class="fa fa-user-circle"></i> Profil Siswa</h3>
+          <div id="userProfileWidget" class="user-profile-widget"
+            style="padding:15px; display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <div class="avatar" style="margin:0;"><i class="fa fa-user-graduate"></i></div>
+              <div style="display:flex; flex-direction:column; text-align:left;">
+                <span class="user-name" id="widgetUserName" style="font-weight:700; color:#3b2a0c;">Tamu</span>
+                <span class="user-role" id="widgetUserRole"
+                  style="font-size:11px; color:#7c6e52; font-weight:600;">Umum</span>
+              </div>
+            </div>
+            <!-- Gamifikasi Info -->
+            <div class="user-xp-info"
+              style="margin-top:5px; text-align:left; border-top:1px dashed #eadff5; padding-top:8px;">
+              <div
+                style="display:flex; justify-content:space-between; font-size:11px; font-weight:700; color:#4a3718; margin-bottom:4px;">
+                <span id="widgetUserLevel">Level 1</span>
+                <span id="widgetUserXpText">0 / 100 XP</span>
+              </div>
+              <div class="xp-bar-bg"
+                style="width:100%; height:8px; background:#eadff5; border-radius:4px; overflow:hidden;">
+                <div id="widgetUserXpBar" class="xp-bar-fill"
+                  style="width:0%; height:100%; background:linear-gradient(90deg, #7c3aed, #ec4899); transition:width 0.4s ease;">
+                </div>
+              </div>
+            </div>
+            <!-- Rak Lencana (Badges Cabinet) -->
+            <div class="user-badges-cabinet"
+              style="text-align:left; margin-top:5px; border-top:1px dashed #eadff5; padding-top:8px;">
+              <strong style="font-size:11px; color:#5c4a24; display:block; margin-bottom:6px;"><i class="fa fa-trophy"
+                  style="color:#d97706;"></i> Lencana Kompetensi</strong>
+              <div class="badges-shelf" style="display:flex; gap:6px; flex-wrap:wrap;">
+                <span class="badge-item locked" id="badge-lk1" title="Ksatria Ordo (LKPD 1 Sempurna)"><i
+                    class="fa fa-chess-knight"></i></span>
+                <span class="badge-item locked" id="badge-lk10" title="Pakar Invers (LKPD 10 Sempurna)"><i
+                    class="fa fa-key"></i></span>
+                <span class="badge-item locked" id="badge-exam" title="Master Ujian (Skor Ujian 100)"><i
+                    class="fa fa-crown"></i></span>
+                <span class="badge-item locked" id="badge-crypto" title="Pecinta Kripto (Menggunakan Hill Cipher)"><i
+                    class="fa fa-user-secret"></i></span>
+                <span class="badge-item locked" id="badge-filter" title="Seniman Matriks (Melakukan Filter Gambar)"><i
+                    class="fa fa-palette"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget Checklist Media Tampilan -->
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading"><i class="fa fa-tasks"></i> Checklist Media</h3>
+          <p style="font-size:11.5px; color:#666; margin-bottom:8px; padding:0 10px;">Pilih media yang ingin ditampilkan
+            di konten:</p>
+          <div style="padding:0 8px; display:flex; flex-direction:column; gap:4px;">
+            <label class="checklist-item">
+              <input type="checkbox" id="chk-video-pengertian" checked
+                onchange="toggleMediaChecklist('video', 'pengertian')" />
+              <span>Video Pengertian</span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" id="chk-video-operasi" checked
+                onchange="toggleMediaChecklist('video', 'operasi')" />
+              <span>Video Operasi</span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" id="chk-video-yt-pengenalan" checked
+                onchange="toggleMediaChecklist('video', 'yt-pengenalan')" />
+              <span>YT Pengenalan</span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" id="chk-video-yt-operasi" checked
+                onchange="toggleMediaChecklist('video', 'yt-operasi')" />
+              <span>YT Operasi</span>
+            </label>
+            <hr style="border:none; border-top:1px dashed #eadff5; margin:6px 0;" />
+            <label class="checklist-item">
+              <input type="checkbox" id="chk-foto-baris" checked
+                onchange="toggleMediaChecklist('foto', 'Matriks baris.jpg')" />
+              <span>Foto Matriks Baris</span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" id="chk-foto-gambar" checked
+                onchange="toggleMediaChecklist('foto', 'gambar matriks.webp')" />
+              <span>Foto Gambar Matriks</span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" id="chk-foto-det" checked
+                onchange="toggleMediaChecklist('foto', 'file/img_determinant.png')" />
+              <span>Gambar Determinan</span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" id="chk-foto-mult" checked
+                onchange="toggleMediaChecklist('foto', 'file/img_multiplication.png')" />
+              <span>Gambar Perkalian</span>
+            </label>
+            <label class="checklist-item">
+              <input type="checkbox" id="chk-foto-real" checked
+                onchange="toggleMediaChecklist('foto', 'file/img_real_world.png')" />
+              <span>Gambar Aplikasi</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Widget Trik Cepat Matriks -->
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff;"><i
+              class="fa fa-bolt"></i> ⚡ Trik Cepat Matriks</h3>
+          <p style="font-size:11.5px; color:#666; margin-bottom:8px; padding:0 10px;">Kuasai trik kilat pengerjaan
+            matriks berikut untuk ujian:</p>
+          <div class="quick-tricks-container" style="padding:0 8px; display:flex; flex-direction:column; gap:8px;">
+            <div class="trick-item">
+              <button class="trick-trigger" onclick="toggleTrick(this)">
+                <span>1. Det Matriks 2×2 (Kali Silang)</span>
+                <i class="fa fa-chevron-down"></i>
+              </button>
+              <div class="trick-content">
+                <p>Cukup kalikan diagonal utama lalu kurangi perkalian diagonal samping:</p>
+                <div class="formula-box">det(A) = ad − bc</div>
+                <p style="margin-top:4px; font-size:11px; color:#d97706;"><em>Contoh: [[3,2],[1,4]] → (3×4)-(2×1) = 12-2
+                    = 10.</em></p>
+              </div>
+            </div>
+
+            <div class="trick-item">
+              <button class="trick-trigger" onclick="toggleTrick(this)">
+                <span>2. Invers 2×2 Kilat (Tukar & Minus)</span>
+                <i class="fa fa-chevron-down"></i>
+              </button>
+              <div class="trick-content">
+                <p>Tukar posisi diagonal utama <strong>(a ↔ d)</strong>, beri tanda minus pada diagonal samping
+                  <strong>(-b, -c)</strong>, kalikan 1/det:</p>
+                <div class="formula-box">A⁻¹ = 1/det × [[d, -b], [-c, a]]</div>
+              </div>
+            </div>
+
+            <div class="trick-item">
+              <button class="trick-trigger" onclick="toggleTrick(this)">
+                <span>3. Ordo Hasil Kali Matriks</span>
+                <i class="fa fa-chevron-down"></i>
+              </button>
+              <div class="trick-content">
+                <p>Jika matriks A berordo <strong>m×n</strong> dikalikan B berordo <strong>n×p</strong>, cukup "coret"
+                  nilai <strong>n</strong> yang sama di tengah:</p>
+                <div class="formula-box">(m × n) × (n × p) → m × p</div>
+              </div>
+            </div>
+
+            <div class="trick-item">
+              <button class="trick-trigger" onclick="toggleTrick(this)">
+                <span>4. Keajaiban Matriks Identitas</span>
+                <i class="fa fa-chevron-down"></i>
+              </button>
+              <div class="trick-content">
+                <p>Perkalian matriks apapun dengan matriks identitas <strong>I</strong> tidak mengubah nilainya (sama
+                  seperti angka dikali 1):</p>
+                <div class="formula-box">A × I = I × A = A</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget JSON Editor untuk LKPD -->
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading"><i class="fa fa-code"></i> Editor JSON LKPD</h3>
+          <p style="font-size:11.5px; color:#666; margin-bottom:8px; padding:0 10px;">Ubah struktur LKPD Interaktif
+            dengan memodifikasi JSON di bawah ini:</p>
+          <div class="lkpd-json-editor-widget">
+            <textarea id="lkpdJsonEditor" placeholder="JSON LKPD..."></textarea>
+            <button class="btn-primary" onclick="updateLKPDFromJson()"
+              style="margin-top:8px; width:100%; padding:6px 12px; font-size:12px;">Update LKPD</button>
+          </div>
+        </div>
+      </aside>
+
+    </main>
+
+    <!-- Footer: Bagian bawah website yang berisi info hak cipta dan link media sosial -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="Logo Universitas Mataram.png" alt="UNRAM" class="footer-logo" />
+          <div>
+            <strong>MatriksEdu</strong>
+            <p>Media Pembelajaran Matematika<br />Universitas Mataram</p>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#" onclick="showContent('pengertian')">Materi Matriks</a></li>
+            <li><a href="#" onclick="showContent('video')">Video Belajar</a></li>
+            <li><a href="#" onclick="showContent('soalAcak')">Soal Latihan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Sumber Belajar</h4>
+          <ul>
+            <li><a href="#" onclick="showContent('pdf')">Modul PDF</a></li>
+            <li><a href="#" onclick="showContent('gambar')">Infografis</a></li>
+            <li><a href="#" onclick="showContent('tanyaJawab')">Tanya Jawab</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <h4>Hubungi Kami</h4>
+          <ul class="social-list">
+            <li>
+              <a href="https://www.instagram.com/sitikholilahagustia?igsh=MTNoOHpwNTdzZXBqaA==" target="_blank"
+                class="social-link ig">
+                <i class="fab fa-instagram"></i>
+                <span>Siti_Kholilah</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/6283894967249" target="_blank" class="social-link wa">
+                <i class="fab fa-whatsapp"></i>
+                <span>+62 838-9496-7249</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@kholilah_23?_r=1&_t=ZS-96B45etaTbE" target="_blank"
+                class="social-link tt">
+                <i class="fab fa-tiktok"></i>
+                <span>@matriksedu</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/share/17bgmoMnb4/" target="_blank" class="social-link fb">
+                <i class="fab fa-facebook"></i>
+                <span>MatriksEdu UNRAM</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 MatriksEdu – Universitas Mataram. Hak Cipta Dilindungi.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

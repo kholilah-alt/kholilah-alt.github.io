@@ -1,0 +1,6 @@
+[
+  { "username": "admin", "password": "1234", "role": "admin", "name": "Administrator" },
+  { "username": "siswa1", "password": "123", "role": "siswa", "name": "M. Syamsuddiya'" },
+  { "username": "siswa2", "password": "456", "role": "siswa", "name": "Siti Kholilah" },
+  { "username": "guru", "password": "987", "role": "guru", "name": "ibu rahmah, S.Pd." }
+]
